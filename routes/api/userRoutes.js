@@ -1,7 +1,11 @@
 const router = require('express').Router();
+const User = require('../../models/User');
 
 router.get('/', (req, res) => {
-  res.send('hello world')
+  User.find().then( (data) => {
+    res.json(data)
+
+  }) 
 })
 
 
