@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+const apiRoutes = require('./routes/api')
 const PORT = process.env.PORT || 3001;
 
 const app = express()
@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 // routes here
-
+app.use(apiRoutes)
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/socialapi', {
   useNewUrlParser: true,
