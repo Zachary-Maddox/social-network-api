@@ -47,8 +47,52 @@ router.get('/:id', (req, res) => {
   });
 })
 
+// Update thought by Id
+router.put("/update/:thoughtId", (req, res) => {
+  Thought.findOneAndUpdate({ _id: req.params.thoughtId},{$set:req.body} ,{new:true,runValidators:true})
+      .then((data) => {
+          res.json(data);
+      })
+      .catch((err) => {
+          console.log(err);
+          res.status(500).json(err);
+      });
+});
 
+// delete a thought by id
+router.delete("/delete/:id", (req, res) => {
+  Thought.findOneAndDelete({ _id: req.params.id })
+      .then((data) => {
+          res.json(data);
+      })
+      .catch((err) => {
+          console.log(err);
+          res.status(500).json(err);
+      });
+});
 
+// add a reaction to thought
+router.put("/add/:thoughtId/:reactionId", (req, res) => {
+  Thought.findOneAndUpdate({ _id: req.params.thoughtId},{$set:req.body} ,{new:true,runValidators:true})
+      .then((data) => {
+          res.json(data);
+      })
+      .catch((err) => {
+          console.log(err);
+          res.status(500).json(err);
+      });
+});
 
+// remove reaction from thought
+router.put("/remove/:thoughtId/:reactionId", (req, res) => {
+  Thought.findOneAndUpdate({ _id: req.params.thoughtId},{$pull:{reaction:req.params.reactionId}},{new:true})
+      .then((data) => {
+          res.json(data);
+      })
+      .catch((err) => {
+          console.log(err);
+          res.status(500).json(err);
+      });
+});
 
 module.exports = router
