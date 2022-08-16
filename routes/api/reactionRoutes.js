@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const User = require('../../models/Reaction');
+const Reaction = require('../../models/Reaction');
+const Thought = require('../../models/Thought');
+const User = require('../../models/User');
 
 router.get('/', (req, res) => {
   Reaction.find().then( (data) => {
