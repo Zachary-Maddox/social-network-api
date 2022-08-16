@@ -3,6 +3,7 @@ const Thought = require('../../models/Thought');
 const User = require('../../models/User');
 const Reaction = require('../../models/Reaction');
 
+// find all thoughts
 router.get('/', (req, res) => {
   Thought.find().then( (data) => {
     res.json(data)
@@ -12,7 +13,7 @@ router.get('/', (req, res) => {
     res.status(500).json(err);
   });
 })
-
+// create Thought
 router.post('/', (req, res) => {
   Thought.create(req.body)
       .then((dbThoughtData) => {
@@ -34,7 +35,7 @@ router.post('/', (req, res) => {
         res.status(500).json(err);
       });
 })
-
+// find thought by id
 router.get('/:id', (req, res) => {
   Thought.findOne({_id:req.params.id}).then( (data) => {
   
