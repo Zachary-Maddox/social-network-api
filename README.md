@@ -2,6 +2,11 @@
   ## Description
  This is a API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. In this I emplimented Express.js for routing, a MongoDB database, and the Mongoose ODM.
 
+ video link 1: https://drive.google.com/file/d/1ZY5dGl5c3hU9D1LguLKAvLcn_7Vn-fad/view
+
+ video link 2: https://drive.google.com/file/d/1SNJNZE3pSh1ukIJvS6au3vqgjyTCRwYP/view
+
+ GitHub link:https://github.com/Zachary-Maddox/social-network-api
   
   ## Table of contents
   
